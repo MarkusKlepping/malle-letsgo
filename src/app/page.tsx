@@ -9,7 +9,7 @@ export default function Home() {
 
   useEffect(() => {
     const timeZone = 'Europe/Berlin';
-    const endDate = DateTime.fromISO('2024-08-01T00:00:00', { zone: timeZone }).toUTC();
+    const endDate = DateTime.fromISO('2024-12-21T20:00:00', { zone: timeZone }).toUTC();
 
     const calculateTimeLeft = () => {
       const now = DateTime.now().setZone(timeZone);
@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen items-center justify-center p-6 bg-gray-100">
       <div className="space-y-6">
-        <h1 className="text-3xl font-bold text-center text-gray-800">Bis zu unserem Trip nach Italien...</h1>
+        <h1 className="text-3xl font-bold text-center text-gray-800">Bis zu unserem RendezVOUZ in ALT CITY...</h1>
         <div className="text-lg text-center bg-white p-4 rounded-lg shadow-md text-black">
           {
             isLoading ? "Wird berechnet..." : 
@@ -43,12 +43,15 @@ export default function Home() {
           }
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto text-black ">
+        
           <GenericCounter label="... werden noch ca." totalAmount={26500000000} unit="€ an Bürgergeld ausgezahlt" />
           <GenericCounter label="... wird uns der Bundestag noch." totalAmount={1200000000} unit="€ kosten" />
           <GenericCounter label="... wird die DB noch" totalAmount={3700800} unit="Minuten zu spät kommen" />
           <GenericCounter label="... werden noch ca." totalAmount={50000000000} unit="Burger in den USA gegessen" />
           <GenericCounter label="... wird Lidl noch ca." totalAmount={114800000000} unit="€ an Umsatz generieren" />
+          
         </div>
+        <h2 className="text-black text-center">Lasst euch nicht ärgern</h2>
       </div>
     </main>
   );

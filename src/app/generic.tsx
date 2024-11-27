@@ -6,12 +6,16 @@ interface GenericCounterProps {
   unit: string;
 }
 
-export default function GenericCounter({ label, totalAmount, unit }: GenericCounterProps) {
+export default function GenericCounter({
+  label,
+  totalAmount,
+  unit,
+}: GenericCounterProps) {
   const [count, setCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const endDate = new Date("2024-08-01"); 
+    const endDate = new Date("2024-12-21T20:00:00Z");
 
     const amountPerDay = totalAmount / 365;
     const amountPerSecond = amountPerDay / 86400;
